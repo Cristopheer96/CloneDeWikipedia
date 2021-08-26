@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <section>
+            <div><img class="img-wiki" src="data:image/png;base64,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" alt=""></div>
+            <div>La Enciclopedia libre</div>
+        </section>
+    </header> 
+
+    <main>
+
+        <div class="parent">
+        <div class="div1">
+          <a class="idioma" href="">Español</a>
+        <a href="">1 696 000+ artículos</a>    
+        </div>
+        <div class="div2"> 
+            <a class="idioma"href="">日本語</a>
+         <a href="">1 275 000+ 記事</a> 
+        </div>
+        <div class="div3">
+            <a class="idioma" href="">Русский</a>
+          <a href="">1 734 000+ статей</a> 
+        </div>
+        <div class="div4"> 
+            <a class="idioma" href="">中文</a>
+        <a href="">1 206 000+ 條目</a> 
+        </div>
+        <div class="div5"> 
+            <a class="idioma" href="">Português</a>
+        <a href="">1 066 000+ artigos</a> 
+        </div>
+
+
+        <div class="div6"> 
+            <img class="img-planeta" src="https://www.wikipedia.org/portal/wikipedia.org/assets/img/Wikipedia-logo-v2.png" alt="">
+        </div>
+
+
+        <div class="div7">
+            <a class="idioma" href="">English</a>
+        <a  href="">6 326 000+ articles</a>  </div>
+        <div  class="div8"> 
+            <a class="idioma" href="">Deutsch</a>
+        <a href="">2 590 000+ Artikel</a> 
+        </div>
+        <div class="div9"> 
+            <a class="idioma" href="">Français</a>
+        <a href=""> 2 340 000+ articles</a> 
+        </div>
+        <div class="div10">
+            <a class="idioma" href="">Italiano</a>
+        <a href="">1 701 000+ voci        </a>  </div>
+        <div class="div11"> 
+            <a class="idioma" href="">Polski</a>
+        <a href="">1 480 000+ haseł</a> 
+
+
+        </div>
+
+    </main>
+
+    <nav>
+        
+            <div class="search">
+                <input type="text">
+                <select name="select" >
+                    <option value="">Abkhazian</option>
+                    <option value="">Afar</option>
+                    <option value="">Bislama</option>
+                    <option value="">Catalan	</option>
+                    <option value="">Chinese</option>
+                    <option value="">Dutch	</option>
+                    <option value="">English</option>
+                    <option value="">Español</option>
+                    <option value="">French</option>
+                    <option value="">Hindi	</option>
+                    <option value="">Japanese</option>
+                    <option value="">Russian</option>
+                    <option value="">Korean</option>
+
+                </select>
+                <a class="search-icon"></a>
+            </div>
+
+            <div class="language"></div>
+
+
+        
+
+    </nav>
+
+
+    <div class="acordeon" >
+       
+                <a class="open" href="#d1"></a>
+                <a class="close" href=""></a>
+ 
+     </div>
+            
+    <div class="d1" id="d1">
+        <div class=desplegable>
+            <h2>1 0000 0000 arituclos</h2>
+            <div class="lista">
+                <ul>
+                    <li>Polski</li>
+                    <li>Desustch</li>
+                    <li>English</li>
+                </ul>
+                <ul>
+                    <li>Español</li>
+                    <li>Italiano</li>
+                    <li>Nederlands</li>
+                </ul>
+                <ul>
+                    <li>Frances</li>
+                    <li>Indio</li>
+                    <li>Ruso</li>
+                </ul>
+                <ul>
+                    <li>Chileno</li>
+                    <li>Japones</li>
+                    <li>Chino</li>
+                </ul>
+                <ul>
+                    <li>Polski</li>
+                    <li>Desustch</li>
+                    <li>English</li>
+                </ul>
+                <ul>
+                    <li>Español</li>
+                    <li>Italiano</li>
+                    <li>Nederlands</li>
+                </ul>
+                <ul>
+                    <li>Polski</li>
+                    <li>Desustch</li>
+                    <li>English</li>
+                </ul>
+                <ul>
+                    <li>Español</li>
+                    <li>Italiano</li>
+                    <li>Nederlands</li>
+                </ul>
+                <ul>
+                    <li>Frances</li>
+                    <li>Indio</li>
+                    <li>Ruso</li>
+                </ul>
+                <ul>
+                    <li>Polski</li>
+                    <li>Desustch</li>
+                    <li>English</li>
+                </ul>
+                
+                
+                
+
+
+            </div>
+        </div>
+        <div class=desplegable>
+            <h2>1 0000 0000 arituclos</h2>
+            <div class="lista">
+              
+                <ul>
+                    <li>Español</li>
+                    <li>Italiano</li>
+                    <li>Nederlands</li>
+                </ul>
+                <ul>
+                    <li>Frances</li>
+                    <li>Indio</li>
+                    <li>Ruso</li>
+                </ul>
+                <ul>
+                    <li>Chileno</li>
+                    <li>Japones</li>
+                    <li>Chino</li>
+                </ul>
+                <ul>
+                    <li>Polski</li>
+                    <li>Desustch</li>
+                    <li>English</li>
+                </ul>
+                <ul>
+                    <li>Español</li>
+                    <li>Italiano</li>
+                    <li>Nederlands</li>
+                </ul>
+                <ul>
+                    <li>Polski</li>
+                    <li>Desustch</li>
+                    <li>English</li>
+                </ul>
+                <ul>
+                    <li>Español</li>
+                    <li>Italiano</li>
+                    <li>Nederlands</li>
+                </ul>
+                <ul>
+                    <li>Frances</li>
+                    <li>Indio</li>
+                    <li>Ruso</li>
+                </ul>
+                <ul>
+                    <li>Polski</li>
+                    <li>Desustch</li>
+                    <li>English</li>
+                </ul>
+                <ul>
+                    <li>Español</li>
+                    <li>Italiano</li>
+                    <li>Nederlands</li>
+                </ul>
+              
+
+
+            </div>
+            <div class=desplegable>
+                <h2>1 0000 0000 arituclos</h2>
+                <div class="lista">
+                    
+                
+                    <ul>
+                        <li>Frances</li>
+                        <li>Indio</li>
+                        <li>Ruso</li>
+                    </ul>
+                    <ul>
+                        <li>Chileno</li>
+                        <li>Japones</li>
+                        <li>Chino</li>
+                    </ul>
+                    <ul>
+                        <li>Polski</li>
+                        <li>Desustch</li>
+                        <li>English</li>
+                    </ul>
+                    <ul>
+                        <li>Español</li>
+                        <li>Italiano</li>
+                        <li>Nederlands</li>
+                    </ul>
+                    <ul>
+                        <li>Polski</li>
+                        <li>Desustch</li>
+                        <li>English</li>
+                    </ul>
+                    <ul>
+                        <li>Español</li>
+                        <li>Italiano</li>
+                        <li>Nederlands</li>
+                    </ul>
+                    <ul>
+                        <li>Frances</li>
+                        <li>Indio</li>
+                        <li>Ruso</li>
+                    </ul>
+                    <ul>
+                        <li>Polski</li>
+                        <li>Desustch</li>
+                        <li>English</li>
+                    </ul>
+                    <ul>
+                        <li>Español</li>
+                        <li>Italiano</li>
+                        <li>Nederlands</li>
+                    </ul>
+                    <ul>
+                        <li>Frances</li>
+                        <li>Indio</li>
+                        <li>Ruso</li>
+                    </ul>
+    
+    
+                </div>
+            </div>
+            
+        </div>
+ 
+                
+     </div>
+            
+    <footer>
+        <div class="parent-footer">
+            <div class="divf13"> 
+                <img class="wikimedia" src="https://media-exp1.licdn.com/dms/image/C4E0BAQF3llJ-DxuEFA/company-logo_200_200/0/1519856569257?e=2159024400&v=beta&t=eo0Aa1Cm6z0lB5n3fcUANrgirUfX5G81-1DztVwhJdU" alt="">
+                <p>Wikipedia es alojada por la Fundación Wikimedia, una organización sin fines de lucro que también     alberga una gama de otros proyectos. <a href="">Usted puede apoyar nuestro trabajo con una donación.</a>
+                </p>
+
+
+            </div>
+            
+            <div class="divf14">
+                <img class="wikipedia-footer" src="./wikifooter.png" alt="">
+                <b>Descargar Wikipedia para Android o iOS                </b>
+                <p>Guarda tus artículos favoritos para leerlos sin conexión, sincroniza tus listas de lectura en varios dispositivos y personaliza tu experiencia de lectura con la aplicación oficial de Wikipedia.</p>
+                <img class="wikipedia-footer-app" src="wikipedia-footer-app.png"">
+                
+                
+
+            </div>
+
+            <div class="divf1"> 
+                <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Commons-logo.svg" alt=" ">
+                <div>
+                    <a href="">Commons</a>
+                    <p>Fotos libremente utilizables y más</p>
+                </div>
+            </div>
+
+
+            <div class="divf2"> 
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Wikivoyage-Logo-v3-icon.svg/1024px-Wikivoyage-Logo-v3-icon.svg.png" alt=" ">
+                <div>
+                    <a href="">Wikiviajes</a>
+                    <p>La guía de viajes libre </p>
+                </div>
+            </div>
+
+            <div class="divf3"> 
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Wiktfavicon_en.svg/1024px-Wiktfavicon_en.svg.png" alt=" ">
+                <div>
+                    <a href="">Wikcionario</a>
+                    <p>El diccionario libre</p>
+                </div>
+            </div>
+
+            <div class="divf4"> 
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Wikibooks-logo.svg/1200px-Wikibooks-logo.svg.png" alt=" ">
+                <div>
+                    <a href="">Wikilibros</a>
+                    <p>Libros de Contenido libre</p>
+                </div>
+            </div>
+
+            <div class="divf5"> 
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Wikinews-logo.svg/1200px-Wikinews-logo.svg.png" alt=" ">
+                <div>
+                    <a href="">Wikinoticias</a>
+                    <p>La fuente de noticias libre</p>
+                </div>
+            </div>
+            
+            <div class="divf6"> 
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Notification-icon-Wikidata-logo.svg/1200px-Notification-icon-Wikidata-logo.svg.png" alt=" ">
+                <div>
+                    <a href="">Wikidata</a>
+                    <p> Base de conocimiento</p>
+                </div>
+            </div>
+            
+            <div class="divf7"> 
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Wikiversity_logo_2017.svg/1200px-Wikiversity_logo_2017.svg.png" alt=" ">
+                <div>
+                    <a href="">Wikiversidad</a>
+                    <p>Plataforma educativa libre</p>
+                </div>
+            </div>
+            
+            <div class="divf8"> 
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Notification-icon-Wikiquote.svg/1200px-Notification-icon-Wikiquote.svg.png" alt=" ">
+                <div>
+                    <a href="">Wikiquote</a>
+                    <p>La coleccion de citas</p>
+                </div>
+            </div>
+            
+            <div class="divf9"> 
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Notification-icon-MediaWiki-logo.svg/1200px-Notification-icon-MediaWiki-logo.svg.png" alt=" ">
+                <div>
+                    <a href="">MediaWiki</a>
+                    <p>Aplicacion wiki libre y abierta</p>
+                </div>
+            </div>
+
+            <div class="divf10">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Wikisource-logo.svg/1200px-Wikisource-logo.svg.png" alt=" ">
+                <div>
+                    <a href="">Wikisource</a>
+                    <p>la biblioteca libre</p>
+                </div>
+            </div>
+            
+            <div class="divf11"> 
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Wikispecies-logo.svg/1200px-Wikispecies-logo.svg.png" alt=" ">
+                <div>
+                    <a href="">Wikispecies</a>
+                    <p>Directorio de especies libre</p>
+                </div>
+            </div>
+            
+            <div class="divf12">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Meta-Wiki_Proposed_logo.svg/1200px-Meta-Wiki_Proposed_logo.svg.png" alt=" ">
+                <div>
+                    <a href="">Meta-Wiki</a>
+                    <p>Coordinacion y documentacion comunitaria/p>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+            
+        </body>
+        </html>
